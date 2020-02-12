@@ -48,7 +48,7 @@ function draw() {
 
 	score = snake.tail.length;
 	fill(0);
-	textSize(20);
+	textSize(22);
 	text(`Score: ${score}`, width - 90, 30);
 }
 
@@ -120,7 +120,8 @@ class Snake {
 	}
 
 	draw() {
-		fill(0);
+		noStroke();
+		fill(100);
 		rect(this.x, this.y, this.size, this.size);
 
 		this.tail.forEach(piece => {
@@ -167,7 +168,8 @@ class Food {
 	draw() {
 		fill(0, 255, 0);
 		ellipseMode(CORNER);
-		circle(this.x, this.y, this.size);
+		// circle(this.x, this.y, this.size);
+		text('🍏', this.x - 3, this.y + this.size - 2);
 	}
 }
 
@@ -186,6 +188,7 @@ class Poison {
 	draw() {
 		fill(255, 0, 0);
 		ellipseMode(CORNER);
-		circle(this.x, this.y, this.size);
+		// circle(this.x, this.y, this.size);
+		text('🌶', this.x - 3, this.y + this.size - 2);
 	}
 }
